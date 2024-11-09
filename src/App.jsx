@@ -19,10 +19,10 @@ function App() {
 
   const getMovies = async () => {
     if(search === '') {
-      const { data } = await axios(`http://www.omdbapi.com/?i=tt3896198&apikey=af397643&s=spider`)
+      const { data } = await axios(`https://www.omdbapi.com/?apikey=af397643&s=spider`)
       dispatch({type: 'GET_DATA', payload: {allMovie: data.Search}})
     } else {
-      const { data } = await axios(`http://www.omdbapi.com/?i=tt3896198&apikey=af397643&s=${search}`)
+      const { data } = await axios(`https://www.omdbapi.com/?apikey=af397643&s=${search}`)
       dispatch({type: 'GET_DATA', payload: {allMovie: data.Search}})
     }
    
